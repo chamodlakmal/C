@@ -5,6 +5,7 @@ int queue[MAX];
 int front=-1, rear=-1;
 
 void insert();
+int delete_element();
 
 void insert() {
 
@@ -25,11 +26,26 @@ void insert() {
 
 }
 
+int delete_element(){
+    int val;
+    if(front==-1||front>rear){
+        printf("\n UNDERFLOW");
+        return -1;
+    }else{
+      val= queue[front];
+      front++;
+      if(front>rear){
+        front=rear=-1;
+      }
+      return val;
+    }
+}
+
 int main()
 {
     insert();
     insert();
-    insert();
-    insert();
+    printf("%d",delete_element());
+    printf("%d",delete_element());
     return 0;
 }
