@@ -6,6 +6,8 @@ int front=-1, rear=-1;
 
 void insert();
 int delete_element();
+int peek();
+void display();
 
 void insert() {
 
@@ -41,11 +43,43 @@ int delete_element(){
     }
 }
 
+int peek(){
+
+    if(front==-1||front>rear)
+    {
+        printf("QUEUE IS EMPTY");
+        return -1;
+
+    }else{
+        return queue[front];
+    }
+
+}
+
+void display()
+{
+
+    printf("\n");
+    if(front==-1||front>rear)
+    {
+        printf("QUEUE IS EMPTY");
+
+    }else{
+        for(int i=front;i<=rear;i++){
+            printf("\t %d",queue[i]);
+        }
+    }
+
+
+}
+
 int main()
 {
     insert();
     insert();
     printf("%d",delete_element());
-    printf("%d",delete_element());
+    insert();
+    printf("%d",peek());
+    display();
     return 0;
 }
