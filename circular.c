@@ -60,7 +60,7 @@ void display_elements()
     }else{
         if(rear>=front)
         {
-            for(int i=front;i<MAX;i++)
+            for(int i=front;i<=rear;i++)
             {
                 printf("%d\t",queue[i]);
             }
