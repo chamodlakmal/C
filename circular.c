@@ -39,7 +39,7 @@ int delete_element()
             rear=-1;
         }else if(front==MAX-1)
         {
-            front=0
+            front=0;
         }else{
             front++;
         }
@@ -49,8 +49,60 @@ int delete_element()
 
 }
 
+void display_elements()
+{
+    printf("\n");
+
+    if(front==-1)
+    {
+        printf("\nEMPTY");
+
+    }else{
+        if(rear>=front)
+        {
+            for(int i=front;i<MAX;i++)
+            {
+                printf("%d\t",queue[i]);
+            }
+
+        }else{
+            for(int i=front;i<MAX;i++)
+            {
+                printf("%d\t",queue[i]);
+            }
+
+            for(int i=0;i<=rear;i++)
+            {
+                printf("%d\t",queue[i]);
+            }
+        }
+    }
+}
+
+int peek()
+{
+    if(front==-1&&rear==-1)
+    {
+        printf("\nEMPTY");
+        return -1;
+    }
+    else
+    {
+       return queue[front];
+    }
+}
+
 int main()
 {
+    insert(4);
+    display_elements();
+    insert(5);
+    display_elements();
+    insert(6);
+    display_elements();
+    printf("\n%d",delete_element());
+    display_elements();
     insert(10);
+    display_elements();
     return 0;
 }
